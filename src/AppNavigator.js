@@ -1,6 +1,6 @@
 import React from 'react';
-import { StackNavigator } from 'react-navigation';
 import { Subtitle, View } from '@shoutem/ui';
+import { StackNavigator } from 'react-navigation';
 import { Home, Quiz } from './components/views';
 
 const appNavigatorConfig = {
