@@ -15,16 +15,24 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case QUIZ_BEGIN:
+    case QUIZ_BEGIN: {
+      state.questions.forEach(question => {
+        const newQuestion = { ...question, correct: false };
+        return newQuestion;
+      });
       return { ...state, correct: 0 };
+    }
     case QUIZ_FETCH:
       return { ...state, loading: true };
     case QUIZ_FETCH_SUCCESS:
       return { ...state, questions: action.payload, loading: false };
     case QUIZ_FETCH_ERROR:
       return { ...state, error: action.payload, loading: false };
-    case QUIZ_CORRECT:
+    case QUIZ_CORRECT: {
+      const question = state.questions[action.payload];
+      question.correct = true;
       return { ...state, correct: state.correct + 1 };
+    }
     default:
       return state;
   }

@@ -9,7 +9,7 @@ import {
   Spinner 
 } from '@shoutem/ui';
 import { connect } from 'react-redux';
-import { quizFetch } from '../../../store/quiz/actions';
+import { quizFetch, quizBegin } from '../../../store/quiz/actions';
 
 class Home extends React.PureComponent {
   componentWillMount() {
@@ -17,6 +17,7 @@ class Home extends React.PureComponent {
   }
   
   onPressBegin = () => {
+      this.props.quizBegin();
       this.props.navigation.navigate('Quiz');
   }
   
@@ -41,4 +42,4 @@ const mapStateToProps = (state) => {
   return { loading };
 };
 
-export default connect(mapStateToProps, { quizFetch })(Home);
+export default connect(mapStateToProps, { quizFetch, quizBegin })(Home);

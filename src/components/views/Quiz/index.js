@@ -18,12 +18,14 @@ class Quiz extends React.PureComponent {
     const currentQuestion = questions[current];
     
     if (currentQuestion.correct_answer === myAnswer) {
-      this.props.quizCorrect();
+      this.props.quizCorrect(current);
     }
     
     if ((current + 1) < questions.length) {
       this.setState({ current: current + 1 });
-    } 
+    } else {
+      this.props.navigation.navigate('Results');
+    }
   }
   
   render() {
