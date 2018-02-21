@@ -1,15 +1,16 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import {
-  Heading,
-  Title,
-  Subtitle,
+  H1,
+  H2,
+  H3,
   Text,
   Button,
   Icon,
   View
-} from '@shoutem/ui';
+} from 'native-base';
 import { connect } from 'react-redux';
+import { Screen } from '../../common';
 import { getNumCorrect } from '../../../store/quiz/selectors';
 
 class Results extends React.PureComponent {
@@ -19,25 +20,27 @@ class Results extends React.PureComponent {
   
   render() {
     return (
-      <ScrollView>
-        <Heading>You scored</Heading>
-        <Title>{this.props.correct}/{this.props.questions.length}.</Title>
-        {this.props.questions.map(question => {
-          return (
-            <View key={question.question}>
-              {question.correct === true ?
-                <Icon name="checkbox-on" />
-                :
-                <Icon name="clear-text" />
-              }
-              <Subtitle>{question.question}</Subtitle>
-            </View>
-          );
-        })}
-        <Button styleName="secondary" onPress={this.onPressPlayAgain}>
-          <Text>PLAY AGAIN?</Text>
-        </Button>
-      </ScrollView>
+      <Screen>
+        <ScrollView>
+          <H1>You scored</H1>
+          <H2>{this.props.correct}/{this.props.questions.length}.</H2>
+          {this.props.questions.map(question => {
+            return (
+              <View key={question.question}>
+                {question.correct === true ?
+                  <Icon name="ios-checkmark-circle-outline" />
+                  :
+                  <Icon name="ios-close-circle-outline" />
+                }
+                <H3>{question.question}</H3>
+              </View>
+            );
+          })}
+          <Button styleName="secondary" onPress={this.onPressPlayAgain}>
+            <Text>PLAY AGAIN?</Text>
+          </Button>
+        </ScrollView>
+      </Screen>
     );
   }
 }

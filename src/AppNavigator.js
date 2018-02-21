@@ -1,5 +1,5 @@
 import React from 'react';
-import { Subtitle, View } from '@shoutem/ui';
+import { Text, View } from 'native-base';
 import { StackNavigator } from 'react-navigation';
 import { Home, Quiz, Results } from './components/views';
 
@@ -8,7 +8,7 @@ const appNavigatorConfig = {
     screen: Home,
     navigationOptions: () => {
       return {
-          headerTitle: <Subtitle>HOME</Subtitle>,
+          headerTitle: <Text>HOME</Text>,
           headerLeft: <View />
       };
     }
@@ -17,7 +17,7 @@ const appNavigatorConfig = {
     screen: Quiz,
     navigationOptions: () => {
       return {
-          headerTitle: <Subtitle>QUIZ</Subtitle>,
+          headerTitle: <Text>QUIZ</Text>,
           headerLeft: <View />
       };
     }
@@ -26,7 +26,7 @@ const appNavigatorConfig = {
     screen: Results,
     navigationOptions: () => {
       return {
-          headerTitle: <Subtitle>RESULTS</Subtitle>,
+          headerTitle: <Text>RESULTS</Text>,
           headerLeft: <View />
       };
     }

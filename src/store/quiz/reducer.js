@@ -15,8 +15,8 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case QUIZ_BEGIN: {
-      const questions = state.questions.map(question => {
-        const newQuestion = { ...question, correct: false };
+      const questions = state.questions.map((question, index) => {
+        const newQuestion = { ...question, correct: false, index };
         return newQuestion;
       });
       return { ...state, questions };

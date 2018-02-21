@@ -1,14 +1,14 @@
 import React from 'react';
 import {
-  Screen,
-  Heading,
-  Title,
-  Subtitle,
+  H1,
+  H2,
+  H3,
   Text,
   Button,
-  Spinner 
-} from '@shoutem/ui';
+  Spinner,
+} from 'native-base';
 import { connect } from 'react-redux';
+import { Screen } from '../../common';
 import { quizFetch, quizBegin } from '../../../store/quiz/actions';
 
 class Home extends React.PureComponent {
@@ -24,13 +24,13 @@ class Home extends React.PureComponent {
   render() {
     return (
       <Screen>
-        <Heading>Welcome to the Trivia Challenge!</Heading>
-        <Title>You will be presented with 10 True or False questions.</Title>
-        <Subtitle>Can you score 100%?</Subtitle>
+        <H1>Welcome to the Trivia Challenge!</H1>
+        <H2>You will be presented with 10 True or False questions.</H2>
+        <H3>Can you score 100%?</H3>
         { this.props.loading === true ?
-          <Spinner styleName="large" />
+          <Spinner />
         :
-          <Button styleName="secondary" onPress={this.onPressBegin}><Text>BEGIN</Text></Button>
+          <Button onPress={this.onPressBegin}><Text>BEGIN</Text></Button>
         }
       </Screen>
     );
