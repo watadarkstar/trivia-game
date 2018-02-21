@@ -10,6 +10,7 @@ import {
   View
 } from '@shoutem/ui';
 import { connect } from 'react-redux';
+import { getNumCorrect } from '../../../store/quiz/selectors';
 
 class Results extends React.PureComponent {
   onPressPlayAgain = () => {
@@ -42,8 +43,9 @@ class Results extends React.PureComponent {
 }
 
 const mapStateToProps = (state) => {
-  const { correct, questions } = state.quiz;
-  return { correct, questions };
+  const { questions } = state.quiz;
+  const correct = getNumCorrect(state);
+  return { questions, correct };
 };
 
 export default connect(mapStateToProps, null)(Results);

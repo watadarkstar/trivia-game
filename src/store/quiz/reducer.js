@@ -7,7 +7,6 @@ import {
 } from './types';
 
 const INITIAL_STATE = {
-  correct: 0,
   questions: [],
   loading: true,
   error: ''
@@ -16,11 +15,11 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case QUIZ_BEGIN: {
-      state.questions.forEach(question => {
+      const questions = state.questions.map(question => {
         const newQuestion = { ...question, correct: false };
         return newQuestion;
       });
-      return { ...state, correct: 0 };
+      return { ...state, questions };
     }
     case QUIZ_FETCH:
       return { ...state, loading: true };
@@ -29,9 +28,9 @@ export default (state = INITIAL_STATE, action) => {
     case QUIZ_FETCH_ERROR:
       return { ...state, error: action.payload, loading: false };
     case QUIZ_CORRECT: {
-      const question = state.questions[action.payload];
-      question.correct = true;
-      return { ...state, correct: state.correct + 1 };
+      const questions = [...state.questions];
+      questions[action.payload].correct = true;
+      return { ...state, questions };
     }
     default:
       return state;
