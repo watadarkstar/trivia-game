@@ -26,6 +26,7 @@
     "native-base": "^2.3.9",
     "react": "16.2.0",
     "react-native": "0.52.0",
+    "react-native-htmlview": "^0.12.1",
     "react-navigation": "^1.0.3",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",

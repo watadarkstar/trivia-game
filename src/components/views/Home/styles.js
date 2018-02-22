@@ -6,7 +6,26 @@ export default StyleSheet.flatten({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  redText: {
-    color: 'red'
+  logo: { 
+    alignSelf: 'center',
+    resizeMode: 'contain',
+    height: 200,
+    width: 200
   },
+  loadingContainer: {
+    marginTop: 30,
+    flex: 1
+  },
+  h2: {
+    textAlign: 'center',
+    padding: 10
+  },
+  h3: {
+    textAlign: 'center',
+    padding: 10
+  },
+  text: {
+    textAlign: 'center',
+    padding: 10
+  }
 });

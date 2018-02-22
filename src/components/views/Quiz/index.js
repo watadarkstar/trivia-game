@@ -1,13 +1,10 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
+import { ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import {
-  H1,
-  H2,
-  H3,
   Text,
   Button,
-  Card,
   View,
   DeckSwiper,
   Icon
@@ -15,6 +12,7 @@ import {
 import { Screen } from '../../common';
 import { quizCorrect } from '../../../store/quiz/actions';
 import styles from './styles';
+import QuizCard from './QuizCard';
 
 class Quiz extends React.PureComponent {
   /*
@@ -49,22 +47,13 @@ class Quiz extends React.PureComponent {
   }
   
   renderCard = (currentQuestion) => {
-    const { questions } = this.props;
-    const { category, question, index } = currentQuestion;
-    
-    return (<Card>
-      <View>
-        <H1>{category}</H1>
-        <H2>{question}</H2>
-        <H3>{index + 1} of {questions.length}</H3>
-      </View>
-    </Card>);
+    return <QuizCard currentQuestion={currentQuestion} questions={this.props.questions} />;
   }
   
   render() {
     return (
       <Screen>
-        <View>
+        <ScrollView contentContainerStyle={styles.container}>
           <DeckSwiper
             ref={(c) => { this._deckSwiper = c; }}
             dataSource={this.props.questions}
@@ -73,17 +62,17 @@ class Quiz extends React.PureComponent {
             onSwipeLeft={() => this.answered('True')}
             looping={false}
           />
-        </View>
-        <View style={styles.footer}>
-          <Button bordered danger iconLeft onPress={this.swipeLeft}>
-            <Icon name="arrow-back" />
-            <Text>FALSE</Text>
-          </Button>
-          <Button bordered success iconRight onPress={this.swipeRight}>
-            <Text>TRUE</Text>
-            <Icon name="arrow-forward" />
-          </Button>
-        </View>
+          <View style={styles.footer}>
+            <Button bordered danger iconLeft onPress={this.swipeLeft}>
+              <Icon name="arrow-back" />
+              <Text>FALSE</Text>
+            </Button>
+            <Button bordered success iconRight onPress={this.swipeRight}>
+              <Text>TRUE</Text>
+              <Icon name="arrow-forward" />
+            </Button>
+          </View>
+        </ScrollView>
       </Screen>
     );
   }
