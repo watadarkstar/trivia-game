@@ -9,4 +9,8 @@ module.exports = {
       '<rootDir>/src',
       '<rootDir>/node_modules'
   ],
+  preset: 'jest-expo',
+  transformIgnorePatterns: [
+    'node_modules/(?!react-navigation|react-native|expo|native-base-shoutem-theme)'
+  ]
 };
