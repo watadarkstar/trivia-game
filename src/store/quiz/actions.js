@@ -4,14 +4,15 @@ import {
   QUIZ_FETCH_SUCCESS,
   QUIZ_FETCH_ERROR,
   QUIZ_CORRECT,
-  QUIZ_BEGIN
+  QUIZ_BEGIN,
+  API_URL
 } from './types';
 
 export const quizFetch = () => {
   return async (dispatch) => {
     dispatch({ type: QUIZ_FETCH });
     try {
-      const response = await axios.get('https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean');
+      const response = await axios.get(API_URL);
       dispatch({ type: QUIZ_FETCH_SUCCESS, payload: response.data.results });
     } catch (err) {
       dispatch({ type: QUIZ_FETCH_ERROR, payload: err });
