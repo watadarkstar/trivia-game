@@ -2,24 +2,24 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   card: {
-    height: 400,
+    height: 300,
     padding: 20,
     justifyContent: 'center',
     alignSelf: 'center',
   },
   h1: {
     textAlign: 'center',
-    padding: 10
+    padding: 10 
   },
   text: {
     textAlign: 'center',
-    paddingTop: 50
+    paddingTop: 20
   },
 });
 
 export const htmlStyles = StyleSheet.create({
   h2: {
-    fontSize: 20,
+    fontSize: 18,
     textAlign: 'center',
     padding: 10
   },

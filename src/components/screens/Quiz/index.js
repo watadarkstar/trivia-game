@@ -50,27 +50,34 @@ class Quiz extends React.PureComponent {
     return <QuizCard currentQuestion={currentQuestion} questions={this.props.questions} />;
   }
   
+  renderEmpty = () => {
+    return <Text style={styles.emptyText}>No more questions.</Text>;
+  }
+  
   render() {
     return (
-      <Screen>
-        <ScrollView contentContainerStyle={styles.container}>
-          <DeckSwiper
-            ref={(c) => { this._deckSwiper = c; }}
-            dataSource={this.props.questions}
-            renderItem={this.renderCard}
-            onSwipeRight={() => this.answered('False')}
-            onSwipeLeft={() => this.answered('True')}
-            looping={false}
-          />
-          <View style={styles.footer}>
-            <Button bordered danger iconLeft onPress={this.swipeLeft}>
-              <Icon name="arrow-back" />
-              <Text>FALSE</Text>
-            </Button>
-            <Button bordered success iconRight onPress={this.swipeRight}>
-              <Text>TRUE</Text>
-              <Icon name="arrow-forward" />
-            </Button>
+      <Screen style={{ flex: 1 }}>
+        <ScrollView contentContainerStyle={{ flex: 1 }}>
+          <View style={styles.container}>
+            <DeckSwiper
+              ref={(c) => { this._deckSwiper = c; }}
+              dataSource={this.props.questions}
+              renderItem={this.renderCard}
+              onSwipeRight={() => this.answered('False')}
+              onSwipeLeft={() => this.answered('True')}
+              looping={false}
+              renderEmpty={this.renderEmpty}
+            />
+            <View style={styles.footer}>
+              <Button bordered danger iconLeft onPress={this.swipeLeft}>
+                <Icon name="arrow-back" />
+                <Text>FALSE</Text>
+              </Button>
+              <Button bordered success iconRight onPress={this.swipeRight}>
+                <Text>TRUE</Text>
+                <Icon name="arrow-forward" />
+              </Button>
+            </View>
           </View>
         </ScrollView>
       </Screen>

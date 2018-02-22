@@ -17,7 +17,6 @@ const appNavigatorConfig = {
     navigationOptions: () => {
       return {
           headerTitle: <Text>QUIZ</Text>,
-          headerLeft: <View />
       };
     }
   },
