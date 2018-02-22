@@ -9,7 +9,7 @@ import {
 const INITIAL_STATE = {
   questions: [],
   loading: true,
-  error: ''
+  error: null
 };
 
 export default (state = INITIAL_STATE, action) => {

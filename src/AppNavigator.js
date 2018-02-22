@@ -1,15 +1,14 @@
 import React from 'react';
 import { Text, View } from 'native-base';
 import { StackNavigator } from 'react-navigation';
-import { Home, Quiz, Results } from './components/views';
+import { Home, Quiz, Results } from './components/screens';
 
 const appNavigatorConfig = {
   Home: {
     screen: Home,
     navigationOptions: () => {
       return {
-          headerTitle: <Text>HOME</Text>,
-          headerLeft: <View />
+          header: null
       };
     }
   },

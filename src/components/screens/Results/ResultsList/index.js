@@ -2,7 +2,7 @@ import React from 'react';
 import {
   List,
 } from 'native-base';
-import ResultsListItem from './ResultsListItem';
+import ResultsListItem from '../ResultsListItem';
 
 export default ({ questions }) => {
   return (

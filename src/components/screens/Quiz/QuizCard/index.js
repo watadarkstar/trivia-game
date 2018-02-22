@@ -12,9 +12,9 @@ export default ({ questions, currentQuestion }) => {
   
   return (
     <Card style={styles.card}>
-      <H1 style={styles.cardH1}>{category}</H1>
+      <H1 style={styles.h1}>{category}</H1>
       <HTMLView value={`<h2>${question}</h2>`} stylesheet={htmlStyles} />
-      <Text style={styles.cardText}>{index + 1} of {questions.length}</Text>
+      <Text style={styles.text}>{index + 1} of {questions.length}</Text>
     </Card>
   );
 };

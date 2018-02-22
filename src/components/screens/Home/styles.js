@@ -3,18 +3,8 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.flatten({
   container: {
     flex: 1,
-    alignItems: 'center',
+    flexDirection: 'column',
     justifyContent: 'center',
-  },
-  logo: { 
-    alignSelf: 'center',
-    resizeMode: 'contain',
-    height: 200,
-    width: 200
-  },
-  loadingContainer: {
-    marginTop: 30,
-    flex: 1
   },
   h2: {
     textAlign: 'center',
@@ -28,8 +18,4 @@ export default StyleSheet.flatten({
     textAlign: 'center',
     padding: 10
   },
-  error: {
-    color: 'red',
-    textAlign: 'center'
-  }
 });
