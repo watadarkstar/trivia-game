@@ -27,5 +27,9 @@ export default StyleSheet.flatten({
   text: {
     textAlign: 'center',
     padding: 10
+  },
+  error: {
+    color: 'red',
+    textAlign: 'center'
   }
 });

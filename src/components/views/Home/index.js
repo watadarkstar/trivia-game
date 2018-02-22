@@ -31,8 +31,8 @@ class Home extends React.PureComponent {
 }
 
 const mapStateToProps = (state) => {
-  const { loading } = state.quiz;
-  return { loading };
+  const { loading, error } = state.quiz;
+  return { loading, error };
 };
 
 export default connect(mapStateToProps, { quizFetch, quizBegin })(Home);
