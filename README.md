@@ -1,9 +1,18 @@
+![28407569_10156119023730120_272498159_o](https://user-images.githubusercontent.com/3059371/36555361-c004a93e-17cf-11e8-8332-25bceb3f028f.jpg)
+
+# Trivia Game
+
+## Overview
+
+This project is based on a coding challenge to create a simple 10 question true or false trivia app.
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
 
 ## Table of Contents
 
+* [Technical Considerations](#technical-considerations)
 * [Updating to New Releases](#updating-to-new-releases)
 * [Available Scripts](#available-scripts)
   * [npm start](#npm-start)
@@ -26,6 +35,18 @@ Below you'll find information about performing common tasks. The most recent ver
   * [Networking](#networking)
   * [iOS Simulator won't open](#ios-simulator-wont-open)
   * [QR Code does not scan](#qr-code-does-not-scan)
+
+## Technical Considerations
+
+* PureComponent
+* ReduxThunk
+* Redux
+* connect() optimizations
+* Folder structure
+* actions, reducers, selectors, and types
+* react-navigation
+* Parsing HTML codes
+* native-base (DeckSwiper)
 
 ## Updating to New Releases
 
