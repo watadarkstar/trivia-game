@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   card: {
-    height: 300,
+    flex: 1,
     padding: 20,
     justifyContent: 'center',
     alignSelf: 'center',
