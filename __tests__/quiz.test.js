@@ -16,7 +16,7 @@ const axiosMock = new MockAdapter(axios);
 // TODO: write tests for reducers and selectors and split up tests further i.e.
 // __tests_/store/quiz/actions.test.js
 
-describe('quiz actions', () => {
+describe('src/store/quiz/actions.js tests', () => {
   afterEach = () => {
     axiosMock.reset();
     axiosMock.restore();
